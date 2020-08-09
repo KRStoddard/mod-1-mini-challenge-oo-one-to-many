@@ -11,7 +11,7 @@ class Restaurant
     @name = name
     @cuisine = cuisine
   #adds Restaurant to array off all restaurants upon initialization
-    @@all << self
+    self.class.all << self
   end
   #method to allow you to find all menuitems for restaurant
   def menu_items
@@ -32,16 +32,7 @@ class Restaurant
   end
   #finds the largest menu of all the instances of restaurant class
   def self.biggest_menu
-    @largest_restaurant_count = 0
-    @largest_restaurant = " "
-    
-    Restaurant.all.each do |restaurant_instance|
-      if restaurant_instance.menu_items.count > @largest_restaurant_count 
-        @largest_restaurant = restaurant_instance 
-        @largest_restaurant_count = restaurant_instance.menu_items.count
-      end
-  end
-    @largest_restaurant 
+    self.all.max_by {|restuarant_instance| restuarant_instance.menu_items.count}
   end
   #method for totaling restaurant item costs for individual restaurant instance
   def tasting_menu_cost

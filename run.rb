@@ -9,6 +9,7 @@ menuitem1 = MenuItem.new(restaurant1, "veggie burger", 8)
 menuitem2 = MenuItem.new(restaurant1, "brussel sprouts", 6)
 menuitem3 = MenuItem.new(restaurant2, "pasta", 10)
 menuitem4 = MenuItem.new(restaurant2, "garlic bread", 3)
+menuitem5 = MenuItem.new(restaurant2, "sangria", 5)
 
 binding.pry
 "pls"
